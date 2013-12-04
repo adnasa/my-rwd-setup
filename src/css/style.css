@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Helpers
+   ========================================================================== */
+/**
+* Strips units of a number, e.g. 20px becomes 20
+*/
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+/* ==========================================================================
+   Main
+   ========================================================================== */
+body {
+  font-size: 16px;
+  font-family: Helvetica, Arial; }
+
+/* ==========================================================================
+   Mediaqueries
+   ========================================================================== */
+/* ==========================================================================
+   Mediaquery Manager
+   ========================================================================== */
+body:after {
+  display: none;
+  content: "extra-small"; }
+  @media only screen and (min-width: 37em) {
+    body:after {
+      content: "small"; } }
+  @media only screen and (min-width: 55em) {
+    body:after {
+      content: "medium"; } }
+  @media only screen and (min-width: 78em) {
+    body:after {
+      content: "large"; } }
+  @media only screen and (min-width: 93em) {
+    body:after {
+      content: "extra-large"; } }
+
+/* ==========================================================================
+   Mediaquery Debugger
+   From an idea of: // http://johanbrook.com/design/css/debugging-css-media-queries/
+   ========================================================================== */
+.mediaquery-debugger::before {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+  background: orange;
+  content: "Extra Small ( < 592px )"; }
+  @media only screen and (min-width: 37em) {
+    .mediaquery-debugger::before {
+      background: red;
+      content: "Small ( 592px - 879px )"; } }
+  @media only screen and (min-width: 55em) {
+    .mediaquery-debugger::before {
+      background: blue;
+      content: "Medium ( 880px - 1247px )"; } }
+  @media only screen and (min-width: 78em) {
+    .mediaquery-debugger::before {
+      background: green;
+      content: "Large ( 1248px - 1487px )"; } }
+  @media only screen and (min-width: 93em) {
+    .mediaquery-debugger::before {
+      background: purple;
+      content: "Extra Large ( >= 1488px )"; } }

@@ -1,0 +1,27 @@
+
+/* ==========================================================================
+   Mediaquery Manager
+   ========================================================================== */
+
+
+// Allowing mediaquery-manager to detect the current mediaquery
+// From: http://adactio.com/journal/5429/
+// ==========================================================================
+
+body:after {
+  display: none;
+  content: "extra-small";
+
+  @include mq-small-and-up {
+    content: "small";
+  }
+  @include mq-medium-and-up {
+    content: "medium";
+  }
+  @include mq-large-and-up {
+    content: "large";
+  }
+  @include mq-extra-large-and-up {
+    content: "extra-large";
+  }
+}

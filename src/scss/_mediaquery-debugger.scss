@@ -1,0 +1,46 @@
+
+/* ==========================================================================
+   Mediaquery Debugger
+   From an idea of: // http://johanbrook.com/design/css/debugging-css-media-queries/
+   ========================================================================== */
+@if $debug-mode == true {
+
+  .mediaquery-debugger::before {
+    // layout
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+
+    // styling
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+
+    // mq-extra-small-and-up
+    background: orange;
+    content: "Extra Small ( < " + $base-font-size * strip-units($mq-small) + " )";
+
+    @include mq-small-and-up {
+      background: red;
+      content: "Small ( " + $base-font-size * strip-units($mq-small) + " - " + ($base-font-size * strip-units($mq-medium) - 1) + " )";
+    }
+    @include mq-medium-and-up {
+      background: blue;
+      content: "Medium ( " + $base-font-size * strip-units($mq-medium) + " - " + ($base-font-size * strip-units($mq-large) - 1) + " )";
+    }
+    @include mq-large-and-up {
+      background: green;
+      content: "Large ( " + $base-font-size * strip-units($mq-large) + " - " + ($base-font-size * strip-units($mq-extra-large) - 1) + " )";
+    }
+    @include mq-extra-large-and-up {
+      background: purple;
+      content: "Extra Large ( >= " + $base-font-size * strip-units($mq-extra-large) + " )";
+    }
+  }
+
+}
