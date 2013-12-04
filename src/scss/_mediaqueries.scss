@@ -1,0 +1,68 @@
+
+/* ==========================================================================
+   Mediaqueries
+   ========================================================================== */
+
+
+// extra-small
+// ==========================================================================
+
+@mixin mq-extra-small-only {
+  @media (max-width : $mq-small - .001) {
+    @content;
+  }
+}
+
+// small
+// ==========================================================================
+
+@mixin mq-small-only {
+  @media only screen and (min-width : $mq-small) and (max-width : $mq-medium - .001) {
+    @content;
+  }
+}
+
+@mixin mq-small-and-up {
+  @media only screen and (min-width : $mq-small) {
+    @content;
+  }
+}
+
+// medium
+// ==========================================================================
+
+@mixin mq-medium-only {
+  @media only screen and (min-width : $mq-medium) and (max-width : $mq-large - .001) {
+    @content;
+  }
+}
+
+@mixin mq-medium-and-up {
+  @media only screen and (min-width : $mq-medium) {
+    @content;
+  }
+}
+
+// large
+// ==========================================================================
+
+@mixin mq-large-only {
+  @media only screen and (min-width : $mq-large) and (max-width : $mq-extra-large - .001) {
+    @content;
+  }
+}
+
+@mixin mq-large-and-up {
+  @media only screen and (min-width : $mq-large) {
+    @content;
+  }
+}
+
+// extra-large
+// ==========================================================================
+
+@mixin mq-extra-large-and-up {
+  @media only screen and (min-width : $mq-extra-large) {
+    @content;
+  }
+}
